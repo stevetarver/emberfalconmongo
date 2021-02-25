@@ -128,7 +128,7 @@ class LogEntryProcessor:
         C library on the target OS - trying for something that is portable
         """
         now = datetime.datetime.utcnow()
-        millis = '{:3d}'.format(int(now.microsecond / 1000))
+        millis = str(int(now.microsecond / 1000)).zfill(3)
         event_dict["timestamp"] = "%s.%sZ" % (now.strftime('%Y-%m-%dT%H:%M:%S'), millis)
         return event_dict
 
